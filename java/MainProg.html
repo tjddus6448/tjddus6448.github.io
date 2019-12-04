@@ -1,0 +1,30 @@
+package org.javaro.lecture;
+import org.javaro.lecture.*;
+public class MainProg {
+	public static void main(String[]args) {
+	Laundry myLaundry = new Laundry("세탁소");
+	Cleaner cleaner1 = new Cleaner("셔츠");
+	Cleaner cleaner2 = new Cleaner("코트");
+	cleaner1.setBrand("명품 브랜드");
+	cleaner2.setBrand("비싼 브랜드");
+	Customer cst1= new Customer();
+	Customer cst2 = new Customer();
+	cst1.setName("김모씨");
+	cst2.setName("이모씨");
+	myLaundry.addCleaner(cleaner1);
+	myLaundry.addCleaner(cleaner2);
+	myLaundry.addCustomer(cst1);
+	myLaundry.addCustomer(cst2);
+	System.out.println("세탁관리 시스템 생성");
+	myLaundry.printStatus();
+	System.out.println("세탁할 셔츠(cleaner1)을 이모씨(cst2)가 세탁을 맡김");
+	myLaundry.checkIn(cleaner1,cst2);
+	myLaundry.printStatus();
+	System.out.println("세탁한 셔츠(cleaner1)를 세탁 완료 후 이모씨(cst2)에게 돌려드림");
+	myLaundry.checkOut(cleaner1);
+	System.out.println("세탁할 코트(cleaner2)를 김모씨(cst1)가 세탁을 맡김");
+	myLaundry.checkIn(cleaner2, cst1);
+	myLaundry.printStatus();
+}
+	
+}
